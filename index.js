@@ -12,7 +12,7 @@ let requestURL = "https://randomuser.me/api/?results=8&gender=female"
 async function fetchUserData(url){
     let response = await fetch(url)
     let actualData = await response.json()
-    return actualData.results[0]
+    return actualData.results
 }
 
 
@@ -24,7 +24,7 @@ async function fetchUserData(url){
 // Call the fetchUserData function with this URL
 async function plzWork(){
 let result = await fetchUserData(requestURL)
-console.log(result.name)
+console.log(result[0].name)
 }
 plzWork()
 

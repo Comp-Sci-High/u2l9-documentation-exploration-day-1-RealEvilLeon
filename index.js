@@ -7,6 +7,13 @@
 //    - Convert the response to JSON
 //    - Log out the JSON or specific info (like name or country)
 
+let requestURL = "https://randomuser.me/api/?results=8&gender=female"
+
+async function fetchUserData(url){
+    let response = await fetch(url)
+    let actualData = await response.json()
+    return actualData.results[0]
+}
 
 
 // ----------------------------------------------------
@@ -15,19 +22,27 @@
 
 // 1 URL to Get 8 Random Users
 // Call the fetchUserData function with this URL
-
+async function plzWork(){
+let result = await fetchUserData(requestURL)
+console.log(result.name)
+}
+plzWork()
 
 
 // 2 URL to Get a Random User from Poland
 // Call the fetchUserData function with this URL
+// let reqUrl1 = "https://randomuser.me/api/?nat=fr&results=8"
 
 
-
-
+// fetchUserData(reqUrl1)
 
 // 3 URL to Get a Random User that’s Male
 // Call the fetchUserData function with this URL
 
+// let reqUrl2 = "https://randomuser.me/api/?nat=ca"
+
+
+// fetchUserData(reqUrl2)
 
 
 
